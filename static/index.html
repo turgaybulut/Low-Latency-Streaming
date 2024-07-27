@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Video Stream</title>
+    <script src="https://cdn.dashjs.org/v4.7.4/dash.all.debug.js"></script>
+    <script type="module" src="jsQR.js"></script>
+    <script type="module" src="app.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        #video-player {
+            width: 800px;
+            height: 450px;
+            object-fit: contain;
+        }
+
+        #video-controls {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+        }
+
+        #latency {
+            color: green;
+            margin-top: 10px;
+            font-size: x-large;
+        }
+
+        .button img {
+            width: 25px;
+            height: 20px;
+        }
+
+        #video-container:hover #video-controls {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="video-container">
+        <video id="video-player" controls></video>
+        <div id="video-controls">
+            <button type="button" class="button" id="goToLiveButton">
+                <img src="icons/live_icon.svg" alt="Live" width="20" height="10">
+            </button>
+            <p id="latency">Latency</p>
+        </div>
+    </div>
+</body>
+
+</html>

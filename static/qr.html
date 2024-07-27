@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>QR Code</title>
+</head>
+
+<body>
+    <script>
+        setInterval(function () {
+            document.getElementById("qr").src = "qr.png" + "?t=" + new Date().getTime();
+        }, 500);
+    </script>
+    <img id="qr" src="qr.png">
+</body>
+
+</html>
